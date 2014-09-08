@@ -30,11 +30,11 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, pass, email', 'required'),
-			array('username, pass, email', 'length', 'max'=>45),
+			array('username, password, email', 'required'),
+			array('username, password, email', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, username, pass, email', 'safe', 'on'=>'search'),
+			array('id, username, password, email', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -58,7 +58,7 @@ class User extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'username' => 'Username',
-			'pass' => 'Pass',
+			'password' => 'Pass',
 			'email' => 'Email',
 		);
 	}
@@ -83,7 +83,7 @@ class User extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('username',$this->username,true);
-		$criteria->compare('pass',$this->pass,true);
+		$criteria->compare('password',$this->password,true);
 		$criteria->compare('email',$this->email,true);
 
 		return new CActiveDataProvider($this, array(
@@ -101,4 +101,9 @@ class User extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+    public function validatePassword($password)
+    {
+        return CPasswordHelper::verifyPassword($password,$this->password);
+    }
 }

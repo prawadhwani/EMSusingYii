@@ -112,24 +112,36 @@ class SiteController extends Controller
      */
     public function actionRegister()
     {
-        $model=new User;
+        $newUser=new User;
+        $model=new RegisterForm;
 
         // uncomment the following code to enable ajax-based validation
-        /*
-        if(isset($_POST['ajax']) && $_POST['ajax']==='user-register-form')
+
+        if(isset($_POST['ajax']) && $_POST['ajax']==='register-form')
         {
             echo CActiveForm::validate($model);
             Yii::app()->end();
         }
-        */
 
-        if(isset($_POST['User']))
+        //collect data from the model
+        if(isset($_POST['RegisterForm']))
         {
-            $model->attributes=$_POST['User'];
+            $model->attributes=$_POST['RegisterForm'];
             if($model->validate())
             {
                 // form inputs are valid, do something here
-                return;
+                $newUser->username = $model->username;
+                $newUser->password = $model->password;
+                $newUser->email = $model->email;
+
+                if($newUser->save())
+                {
+                    $identity = new UserIdentity($newUser->username, $model->password);
+                    $identity->authenticate();
+                    Yii::app()->user->login($identity, 0);
+                    //redirect the user, where she came from
+                    $this->redirect(Yii::app()->user->returnUrl);
+                }
             }
         }
         $this->render('register',array('model'=>$model));

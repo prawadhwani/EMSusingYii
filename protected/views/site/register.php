@@ -26,9 +26,9 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'pass'); ?>
-		<?php echo $form->textField($model,'pass'); ?>
-		<?php echo $form->error($model,'pass'); ?>
+		<?php echo $form->labelEx($model,'password'); ?>
+		<?php echo $form->textField($model,'password'); ?>
+		<?php echo $form->error($model,'password'); ?>
 	</div>
 
 	<div class="row">
