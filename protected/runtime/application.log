@@ -1,0 +1,59 @@
+2014/09/08 12:21:41 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('profile/admin')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=profile/admin
+HTTP_REFERER=http://localhost/EMS/index.php?r=profile/create
+---
+2014/09/08 12:21:53 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('profile/admin')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=profile/admin
+HTTP_REFERER=http://localhost/EMS/index.php?r=profile/create
+---
+2014/09/08 12:22:39 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`EMS`.`profile`, CONSTRAINT `userid` FOREIGN KEY (`id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `profile` (`userid`, `name`, `birthdate`, `website`, `bio`, `picture`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5).
+in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php (73)
+in /usr/share/nginx/html/EMS/index.php (13)
+2014/09/08 12:22:39 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`EMS`.`profile`, CONSTRAINT `userid` FOREIGN KEY (`id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `profile` (`userid`, `name`, `birthdate`, `website`, `bio`, `picture`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5)' in /usr/share/nginx/html/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/db/ar/CActiveRecord.php(1077): CDbCommand->execute()
+#1 /usr/share/nginx/html/yii/framework/db/ar/CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(73): CActiveRecord->save()
+#3 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionCreate()
+#4 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('profile/create')
+#14 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/EMS/index.php?r=profile/create
+HTTP_REFERER=http://localhost/EMS/index.php?r=profile/create
+---
