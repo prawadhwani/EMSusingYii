@@ -136,3 +136,75 @@ Stack trace:
 REQUEST_URI=/EMS/index.php?r=site/login
 HTTP_REFERER=http://localhost/EMS/index.php?r=site/login
 ---
+2014/09/08 18:17:06 [error] [php] Undefined variable: newuser (/usr/share/nginx/html/EMS/protected/controllers/SiteController.php:132)
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/CController.php(286): SiteController->runAction()
+#1 /usr/share/nginx/html/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /usr/share/nginx/html/EMS/index.php(13): CWebApplication->run()
+REQUEST_URI=/EMS/index.php?r=site/register
+in /usr/share/nginx/html/EMS/protected/controllers/SiteController.php (132)
+in /usr/share/nginx/html/EMS/index.php (13)
+2014/09/08 18:40:53 [error] [exception.CException] exception 'CException' with message 'Property "User.passwordHash" is not defined.' in /usr/share/nginx/html/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/db/ar/CActiveRecord.php(161): CComponent->__set('passwordHash', '$2a$13$7HKXKiU1...')
+#1 /usr/share/nginx/html/EMS/protected/controllers/SiteController.php(135): CActiveRecord->__set('passwordHash', '$2a$13$7HKXKiU1...')
+#2 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionRegister()
+#3 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /usr/share/nginx/html/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('register')
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/register')
+#8 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/EMS/index.php?r=site/register
+HTTP_REFERER=http://localhost/EMS/index.php?r=site/register
+---
+2014/09/09 12:01:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'password' at row 1. The SQL statement executed was: INSERT INTO `user` (`username`, `password`, `email`) VALUES (:yp0, :yp1, :yp2).
+in /usr/share/nginx/html/EMS/protected/controllers/SiteController.php (138)
+in /usr/share/nginx/html/EMS/index.php (13)
+2014/09/09 12:01:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'password' at row 1. The SQL statement executed was: INSERT INTO `user` (`username`, `password`, `email`) VALUES (:yp0, :yp1, :yp2)' in /usr/share/nginx/html/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/db/ar/CActiveRecord.php(1077): CDbCommand->execute()
+#1 /usr/share/nginx/html/yii/framework/db/ar/CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 /usr/share/nginx/html/EMS/protected/controllers/SiteController.php(138): CActiveRecord->save()
+#3 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionRegister()
+#4 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('register')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/register')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=site/register
+HTTP_REFERER=http://localhost/EMS/index.php?r=site/register
+---
+2014/09/09 12:07:16 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '1998-31-2' for column 'birthdate' at row 1. The SQL statement executed was: INSERT INTO `profile` (`userid`, `name`, `birthdate`, `website`, `bio`, `picture`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5).
+in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php (73)
+in /usr/share/nginx/html/EMS/index.php (13)
+2014/09/09 12:07:16 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '1998-31-2' for column 'birthdate' at row 1. The SQL statement executed was: INSERT INTO `profile` (`userid`, `name`, `birthdate`, `website`, `bio`, `picture`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5)' in /usr/share/nginx/html/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/db/ar/CActiveRecord.php(1077): CDbCommand->execute()
+#1 /usr/share/nginx/html/yii/framework/db/ar/CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(73): CActiveRecord->save()
+#3 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionCreate()
+#4 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('profile/create')
+#14 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/EMS/index.php?r=profile/create
+HTTP_REFERER=http://localhost/EMS/index.php?r=profile/create
+---

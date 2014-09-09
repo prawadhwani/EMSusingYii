@@ -19,8 +19,10 @@ class UserIdentity extends CUserIdentity
 
     public function authenticate()
     {
+
         $username=strtolower($this->username);
         $user=User::model()->find('LOWER(username)=?',array($username));
+        //CVarDumper::dump($user->validatePassword($this->password));
         if($user===null)
             $this->errorCode=self::ERROR_USERNAME_INVALID;
         else if(!$user->validatePassword($this->password))

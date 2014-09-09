@@ -130,15 +130,17 @@ class SiteController extends Controller
             if($model->validate())
             {
                 // form inputs are valid, do something here
+                //$hash = CPasswordHelper::hashPassword($password);
                 $newUser->username = $model->username;
                 $newUser->password = $model->password;
                 $newUser->email = $model->email;
 
                 if($newUser->save())
                 {
+
                     $identity = new UserIdentity($newUser->username, $model->password);
                     $identity->authenticate();
-                    Yii::app()->user->login($identity, 0);
+                    Yii::app()->user->login($identity);
                     //redirect the user, where she came from
                     $this->redirect(Yii::app()->user->returnUrl);
                 }
