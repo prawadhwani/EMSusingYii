@@ -9,6 +9,9 @@ return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Employee Management System',
 
+    //home page is post
+    'defaultController'=>'profile',
+
 	// preloading 'log' component
 	'preload'=>array('log'),
 

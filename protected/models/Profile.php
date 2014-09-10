@@ -33,8 +33,8 @@ class Profile extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('userid, name, birthdate', 'required'),
-			array('userid, name, website', 'length', 'max'=>45),
+			array(' name, birthdate', 'required'),
+			array('name, website', 'length', 'max'=>45),
 			array('bio, picture', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.

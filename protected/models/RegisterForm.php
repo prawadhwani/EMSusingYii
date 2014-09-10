@@ -25,6 +25,7 @@ class RegisterForm extends CFormModel
             array('username, password, email', 'required'),
             //email and pass are unique
             array('username, email', 'unique', 'className'=>'User'),
+            array('email','email'),
         );
     }
 
