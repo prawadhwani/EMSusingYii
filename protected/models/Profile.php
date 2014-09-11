@@ -36,6 +36,9 @@ class Profile extends CActiveRecord
 			array(' name, birthdate', 'required'),
 			array('name, website', 'length', 'max'=>45),
 			array('bio, picture', 'safe'),
+            //picture uplaoding
+            array('picture', 'file','types'=>'jpg, gif, png', 'allowEmpty'=>true, 'on'=>'update'),
+            array('picture', 'length', 'max'=>255, 'on'=>'insert,update'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, userid, name, birthdate, website, bio, picture', 'safe', 'on'=>'search'),

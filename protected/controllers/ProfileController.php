@@ -65,8 +65,17 @@ class ProfileController extends Controller
 		if(isset($_POST['Profile']))
 		{
 			$model->attributes=$_POST['Profile'];
+            $rnd = rand(0,9999);
+            $uploadedFile=CUploadedFile::getInstance($model,'picture');
+            $fileName = "{$rnd}-{$uploadedFile}";  // random number + file name
+            $model->picture = $fileName;
+
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+            {
+                $uploadedFile->saveAs(Yii::app()->basePath.'/image/'.$fileName);
+                $this->redirect(array('view','id'=>$model->id));
+            }
+
 		}
 
 		$this->render('create',array(
@@ -88,9 +97,19 @@ class ProfileController extends Controller
 
 		if(isset($_POST['Profile']))
 		{
+            $_POST['Profile']['picture'] = $model->picture;
 			$model->attributes=$_POST['Profile'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+            $uploadedFile=CUploadedFile::getInstance($model,'picture');
+
+            if($model->save())
+            {
+                if(!empty($uploadedFile))
+                {
+                    $uploadedFile->saveAs(Yii::app()->basePath.'/image/'.$model->picture);
+                }
+                $this->redirect(array('view','id'=>$model->id));
+            }
+
 		}
 
 		$this->render('update',array(

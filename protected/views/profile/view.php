@@ -22,11 +22,14 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
-
 		'name',
 		'birthdate',
 		'website',
 		'bio',
-		'picture',
+        array(
+            'label'=>'Picture',
+            'type'=>'raw',
+            'value'=> CHtml::image(Yii::app()->request->baseUrl.'/protected/image/'.$model->picture),
+        ),
 	),
 )); ?>
