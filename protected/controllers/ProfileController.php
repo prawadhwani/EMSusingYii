@@ -44,11 +44,13 @@ class ProfileController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView($id)
+	public function actionView()
 	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
+        //$uid= Yii::app()->user->id;
+        $this->render('view',array(
+            'model'=>$this->loadModel(),
+        ));
+
 	}
 
 	/**
@@ -64,7 +66,7 @@ class ProfileController extends Controller
 
 		if(isset($_POST['Profile']))
 		{
-			$model->attributes=$_POST['Profile'];
+            $model->attributes=$_POST['Profile'];
             $rnd = rand(0,9999);
             $uploadedFile=CUploadedFile::getInstance($model,'picture');
             $fileName = "{$rnd}-{$uploadedFile}";  // random number + file name
@@ -90,6 +92,7 @@ class ProfileController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+        //$uid = Yii::app()->user->id;
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
@@ -124,6 +127,7 @@ class ProfileController extends Controller
 	 */
 	public function actionDelete($id)
 	{
+        //$uid = Yii::app()->user->id;
 		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
@@ -133,14 +137,17 @@ class ProfileController extends Controller
 
 	/**
 	 * Lists all models.
-	 */
+    */
+
 	public function actionIndex()
 	{
+        $this->forward('view');
 		$dataProvider=new CActiveDataProvider('Profile');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
 	}
+
 
 	/**
 	 * Manages all models.
@@ -164,9 +171,9 @@ class ProfileController extends Controller
 	 * @return Profile the loaded model
 	 * @throws CHttpException
 	 */
-	public function loadModel($id)
+	public function loadModel()
 	{
-		$model=Profile::model()->findByPk($id);
+		$model=Profile::model()->findByPk(Yii::app()->user->id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

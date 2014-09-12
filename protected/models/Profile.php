@@ -33,7 +33,7 @@ class Profile extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array(' name, birthdate', 'required'),
+			array(' name, birthdate, picture', 'required'),
 			array('name, website', 'length', 'max'=>45),
 			array('bio, picture', 'safe'),
             //picture uplaoding
@@ -53,7 +53,7 @@ class Profile extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'id0' => array(self::BELONGS_TO, 'User', 'id'),
+			'id' => array(self::HAS_ONE, 'User', 'id'),
 		);
 	}
 
@@ -92,7 +92,7 @@ class Profile extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('userid',$this->userid,true);
+
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('birthdate',$this->birthdate,true);
 		$criteria->compare('website',$this->website,true);
@@ -114,4 +114,18 @@ class Profile extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+    protected function beforeSave()
+    {
+        if(parent::beforeSave())
+        {
+            if($this->isNewRecord)
+            {
+                $this->id=Yii::app()->user->id;
+            }
+            return true;
+        }
+        else
+            return false;
+    }
 }
