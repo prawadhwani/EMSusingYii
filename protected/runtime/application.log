@@ -1116,3 +1116,222 @@ Stack trace:
 REQUEST_URI=/EMS/index.php?r=profile/index
 HTTP_REFERER=http://localhost/EMS/index.php?r=profile/view&id=3
 ---
+2014/09/19 18:16:29 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '23' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `profile` (`name`, `birthdate`, `website`, `bio`, `picture`, `id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5).
+in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php (75)
+in /usr/share/nginx/html/EMS/index.php (13)
+2014/09/19 18:16:29 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '23' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `profile` (`name`, `birthdate`, `website`, `bio`, `picture`, `id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5)' in /usr/share/nginx/html/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/db/ar/CActiveRecord.php(1077): CDbCommand->execute()
+#1 /usr/share/nginx/html/yii/framework/db/ar/CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(75): CActiveRecord->save()
+#3 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionCreate()
+#4 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('profile/create')
+#14 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/EMS/index.php?r=profile/create
+HTTP_REFERER=http://localhost/EMS/index.php?r=profile/create
+---
+2014/09/19 19:15:09 [warning] [application] Failed to set unsafe attribute "picture" of "Profile".
+in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php (104)
+in /usr/share/nginx/html/EMS/index.php (13)
+2014/09/19 19:15:23 [warning] [application] Failed to set unsafe attribute "picture" of "Profile".
+in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php (104)
+in /usr/share/nginx/html/EMS/index.php (13)
+2014/09/22 13:32:55 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`EMS`.`tbl_leave`, CONSTRAINT `fk_tbl_leave_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE). The SQL statement executed was: INSERT INTO `tbl_leave` (`description`, `status`, `user_id`) VALUES (:yp0, :yp1, :yp2).
+in /usr/share/nginx/html/EMS/protected/controllers/LeaveController.php (73)
+in /usr/share/nginx/html/EMS/index.php (13)
+2014/09/22 13:32:55 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`EMS`.`tbl_leave`, CONSTRAINT `fk_tbl_leave_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE). The SQL statement executed was: INSERT INTO `tbl_leave` (`description`, `status`, `user_id`) VALUES (:yp0, :yp1, :yp2)' in /usr/share/nginx/html/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/db/ar/CActiveRecord.php(1077): CDbCommand->execute()
+#1 /usr/share/nginx/html/yii/framework/db/ar/CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 /usr/share/nginx/html/EMS/protected/controllers/LeaveController.php(73): CActiveRecord->save()
+#3 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): LeaveController->actionCreate()
+#4 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/create')
+#14 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/EMS/index.php?r=leave/create
+HTTP_REFERER=http://localhost/EMS/index.php?r=leave/create
+---
+2014/09/22 16:25:39 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '23' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `profile` (`name`, `birthdate`, `website`, `bio`, `picture`, `id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5).
+in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php (75)
+in /usr/share/nginx/html/EMS/index.php (13)
+2014/09/22 16:25:39 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '23' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `profile` (`name`, `birthdate`, `website`, `bio`, `picture`, `id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5)' in /usr/share/nginx/html/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/db/ar/CActiveRecord.php(1077): CDbCommand->execute()
+#1 /usr/share/nginx/html/yii/framework/db/ar/CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(75): CActiveRecord->save()
+#3 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionCreate()
+#4 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('profile/create')
+#14 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/EMS/index.php?r=profile/create
+HTTP_REFERER=http://localhost/EMS/index.php?r=profile/create
+---
+2014/09/22 19:13:23 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to view this page' in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php:202
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionAdduser()
+#1 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#2 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#8 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('adduser')
+#10 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('profile/adduser')
+#11 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/EMS/index.php?r=profile/adduser&id=23
+HTTP_REFERER=http://localhost/EMS/index.php?r=profile/view&id=23
+---
+2014/09/22 19:13:29 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to view this page' in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php:202
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionAdduser()
+#1 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#2 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#8 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('adduser')
+#10 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('profile/adduser')
+#11 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/EMS/index.php?r=profile/adduser&id=23
+HTTP_REFERER=http://localhost/EMS/index.php?r=profile/view&id=23
+---
+2014/09/22 19:14:27 [error] [exception.CException] exception 'CException' with message 'Property "ProfileUserForm.project" is not defined.' in /usr/share/nginx/html/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(226): CComponent->__set('project', Object(Profile))
+#1 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionAdduser()
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('adduser')
+#11 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('profile/adduser')
+#12 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/EMS/index.php?r=profile/adduser&id=23
+HTTP_REFERER=http://localhost/EMS/index.php?r=profile/view&id=23
+---
+2014/09/22 19:15:42 [error] [php] include(Project.php): failed to open stream: No such file or directory (/usr/share/nginx/html/yii/framework/YiiBase.php:427)
+Stack trace:
+#0 /usr/share/nginx/html/EMS/protected/views/profile/adduser.php(42): spl_autoload_call()
+#1 /usr/share/nginx/html/yii/framework/web/CBaseController.php(126): require()
+#2 /usr/share/nginx/html/yii/framework/web/CBaseController.php(95): ProfileController->renderInternal()
+#3 /usr/share/nginx/html/yii/framework/web/CController.php(869): ProfileController->renderFile()
+#4 /usr/share/nginx/html/yii/framework/web/CController.php(782): ProfileController->renderPartial()
+#5 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(227): ProfileController->render()
+#6 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionAdduser()
+#7 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#8 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): ProfileController->runAction()
+#9 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#11 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): ProfileController->filterAccessControl()
+#12 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#13 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#14 /usr/share/nginx/html/yii/framework/web/CController.php(265): ProfileController->runActionWithFilters()
+#15 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): ProfileController->run()
+#16 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#17 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#18 /usr/share/nginx/html/EMS/index.php(13): CWebApplication->run()
+REQUEST_URI=/EMS/index.php?r=profile/adduser&id=23
+in /usr/share/nginx/html/EMS/protected/views/profile/adduser.php (42)
+in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php (227)
+in /usr/share/nginx/html/EMS/index.php (13)
+2014/09/22 19:16:54 [error] [exception.CException] exception 'CException' with message 'Profile and its behaviors do not have a method or closure named "isUserInProfile".' in /usr/share/nginx/html/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/db/ar/CActiveRecord.php(227): CComponent->__call('isUserInProfile', Array)
+#1 /usr/share/nginx/html/EMS/protected/models/ProfileUserForm.php(41): CActiveRecord->__call('isUserInProfile', Array)
+#2 /usr/share/nginx/html/EMS/protected/models/ProfileUserForm.php(41): Profile->isUserInProfile(Object(User))
+#3 /usr/share/nginx/html/yii/framework/validators/CInlineValidator.php(42): ProfileUserForm->verify('username', Array)
+#4 /usr/share/nginx/html/yii/framework/validators/CValidator.php(213): CInlineValidator->validateAttribute(Object(ProfileUserForm), 'username')
+#5 /usr/share/nginx/html/yii/framework/base/CModel.php(159): CValidator->validate(Object(ProfileUserForm), NULL)
+#6 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(212): CModel->validate()
+#7 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionAdduser()
+#8 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#15 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('adduser')
+#17 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('profile/adduser')
+#18 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#19 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/EMS/index.php?r=profile/adduser&id=23
+HTTP_REFERER=http://localhost/EMS/index.php?r=profile/adduser&id=23
+---
+2014/09/22 19:19:41 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'EMS.tbl_profile_user_assignment' doesn't exist. The SQL statement executed was: SELECT user_id FROM tbl_profile_user_assignment WHERE profile_id=:profileId AND user_id=:userId.
+in /usr/share/nginx/html/EMS/protected/models/Profile.php (183)
+in /usr/share/nginx/html/EMS/protected/models/ProfileUserForm.php (41)
+in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php (212)
+2014/09/22 19:19:41 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'EMS.tbl_profile_user_assignment' doesn't exist. The SQL statement executed was: SELECT user_id FROM tbl_profile_user_assignment WHERE profile_id=:profileId AND user_id=:userId' in /usr/share/nginx/html/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /usr/share/nginx/html/EMS/protected/models/Profile.php(183): CDbCommand->execute()
+#1 /usr/share/nginx/html/EMS/protected/models/ProfileUserForm.php(41): Profile->isUserInProfile(Object(User))
+#2 /usr/share/nginx/html/yii/framework/validators/CInlineValidator.php(42): ProfileUserForm->verify('username', Array)
+#3 /usr/share/nginx/html/yii/framework/validators/CValidator.php(213): CInlineValidator->validateAttribute(Object(ProfileUserForm), 'username')
+#4 /usr/share/nginx/html/yii/framework/base/CModel.php(159): CValidator->validate(Object(ProfileUserForm), NULL)
+#5 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(212): CModel->validate()
+#6 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionAdduser()
+#7 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#14 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('adduser')
+#16 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('profile/adduser')
+#17 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#18 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/EMS/index.php?r=profile/adduser&id=23
+HTTP_REFERER=http://localhost/EMS/index.php?r=profile/adduser&id=23
+---

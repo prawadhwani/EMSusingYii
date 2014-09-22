@@ -7,7 +7,7 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'Employee Management System',
+	'name'=>'EMS',
 
     //home page is post
     'defaultController'=>'profile',
@@ -39,7 +39,14 @@ return array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
-		// uncomment the following to enable URLs in path-format
+
+        //database authorization manager for RBAC
+        'authManager'=>array(
+            'class'=>'CDbAuthManager',
+            'connectionID'=>'db',
+        ),
+
+        // uncomment the following to enable URLs in path-format
 		/*
 		'urlManager'=>array(
 			'urlFormat'=>'path',

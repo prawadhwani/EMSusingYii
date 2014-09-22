@@ -27,10 +27,10 @@ class ProfileController extends Controller
     public function accessRules()
     {
         return array(
-            /* array('allow',  // allow all users to perform 'list' and 'show' actions
-                'actions'=>array('index', 'view'),
-                'users'=>array('*'),
-            ), */
+            array('allow',  // allow all users to perform 'list' and 'show' actions
+                'actions'=>array('index', 'view', 'adduser'),
+                'users'=>array('@'),
+            ),
             array('allow', // allow authenticated users to perform any action
                 'users'=>array('@'),
             ),
@@ -141,7 +141,7 @@ class ProfileController extends Controller
 
 	public function actionIndex()
 	{
-        $this->forward('view');
+        //$this->forward('view');
 		$dataProvider=new CActiveDataProvider('Profile');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
@@ -191,4 +191,39 @@ class ProfileController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+    public function actionAdduser()
+    {
+        $form = new ProfileUserForm;
+        $profile = $this->loadModel();
+        /*
+        if(!Yii::app()->user->checkAccess('createUser', array('project'=>$project)))
+        {
+            throw new CHttpException(403, 'You are not authorized to view this page');
+        }
+        */
+        //collect user data
+        if(isset($_POST['ProfileUserForm']))
+        {
+            $form->attributes = $_POST['ProfileUserForm'];
+            $form->profile = $profile;
+
+            //validate user input
+            if($form->validate())
+            {
+                Yii::app()->user->setFlash('success', $form->username . "has been added as a new manager");
+                $form = new ProfileUserForm;
+            }
+        }
+
+        //display the adduser form
+        $users = User::model()->findAll();
+        $usernames = array();
+        foreach($users as $user)
+        {
+            $usernames[]=$user->username;
+        }
+        $form->profile = $profile;
+        $this->render('adduser', array('model'=>$form, 'usernames'=>$usernames));
+    }
 }

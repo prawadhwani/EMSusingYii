@@ -41,7 +41,7 @@ class Profile extends CActiveRecord
             array('picture', 'length', 'max'=>255, 'on'=>'insert,update'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, userid, name, birthdate, website, bio, picture', 'safe', 'on'=>'search'),
+			array('id, name, birthdate, website, bio, picture', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -128,4 +128,60 @@ class Profile extends CActiveRecord
         else
             return false;
     }
+
+    public function associateUserToRole($role, $userId)
+    {
+        $sql = "INSERT INTO tbl_profile_user_role (profile_id, user_id, role) VALUES (:profileId, :userId, :role)";
+        $command = Yii::app()->db->createCommand($sql);
+        $command->bindValue(":profileId", $this->id, PDO::PARAM_INT);
+        $command->bindValue(":userId", $userId, PDO::PARAM_INT);
+        $command->bindValue(":role", $role, PDO::PARAM_STR);
+        return $command->execute;
+    }
+
+    public function removeUserFromRole($role, $userId)
+    {
+        $sql = "DELETE FROM tbl_profile_user_role WHERE profile_id=:profileId AND user_id=:userId AND role=:role";
+        $command = Yii::app()->db->createCommand($sql);
+        $command->bindValue(":profileId", $this->id, PDO::PARAM_INT);
+        $command->bindValue(":userId", $userId, PDO::PARAM_INT);
+        $command->bindValue(":role", $role, PDO::PARAM_STR);
+        return $command->execute();
+    }
+
+    public function isUserInRole($role)
+    {
+        $sql = "SELECT role FROM tbl_profile_user_role WHERE profile_id=:profileId AND user_id=:userId AND role=:role";
+        $command = Yii::app()->db->createCommand($sql);
+        $command->bindValue(":profileId", $this->id, PDO::PARAM_INT);
+        $command->bindValue(":userId", Yii::app()->user->getId(),
+            PDO::PARAM_INT);
+        $command->bindValue(":role", $role, PDO::PARAM_STR);
+        return $command->execute()==1 ? true : false;
+    }
+
+    public static function getUserRoleOptions()
+    {
+        return CHtml::listData(Yii::app()->authManager->getRoles(),'name', 'name');
+    }
+
+    public function associateUserToProfile($user)
+    {
+        $sql = "INSERT INTO tbl_profile_user_assignment (profile_id, user_id) VALUES (:profileId, :userId)";
+        $command = Yii::app()->db->createCommand($sql);
+        $command->bindValue(":profileId", $this->id, PDO::PARAM_INT);
+        $command->bindValue(":userId", $user->id, PDO::PARAM_INT);
+        return $command->execute();
+    }
+
+    public function isUserInProfile($user)
+    {
+        $sql = "SELECT user_id FROM tbl_profile_user_assignment WHERE profile_id=:profileId AND user_id=:userId";
+        $command = Yii::app()->db->createCommand($sql);
+        $command->bindValue(":profileId", $this->id, PDO::PARAM_INT);
+        $command->bindValue(":userId", $user->id, PDO::PARAM_INT);
+        return $command->execute()==1 ? true : false;
+    }
+
+
 }

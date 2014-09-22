@@ -13,6 +13,7 @@ $this->menu=array(
 	array('label'=>'Update Profile', 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>'Delete Profile', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Profile', 'url'=>array('admin')),
+    array('label'=>'Add Manager To Profile', 'url'=>array('adduser', 'id'=>$model->id)),
 );
 ?>
 
