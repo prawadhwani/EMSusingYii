@@ -98,5 +98,6 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'admin@io.com',
+        'leaveNeedApproval'=>true,
 	),
 );

@@ -46,12 +46,31 @@ class ProfileController extends Controller
 	 */
 	public function actionView()
 	{
+        $profile=$this->loadModel();
+        $leave = $this->newLeave($profile);
         //$uid= Yii::app()->user->id;
         $this->render('view',array(
-            'model'=>$this->loadModel(),
+            'model'=>$profile,
+            'leave'=>$leave,
         ));
 
 	}
+
+    protected function newLeave($profile)
+    {
+        $leave=new Leave;
+        if(isset($_POST['Leave']))
+        {
+            $leave->attributes=$_POST['Leave'];
+            if($profile->addLeave($leave))
+            {
+                if($leave->status==Leave::STATUS_PENDING)
+                    Yii::app()->user->setFlash('leaveSubmitted','Your leave request will be posted to your manager.');
+                $this->refresh();
+            }
+        }
+        return $leave;
+    }
 
 	/**
 	 * Creates a new model.
@@ -141,11 +160,19 @@ class ProfileController extends Controller
 
 	public function actionIndex()
 	{
-        //$this->forward('view');
-		$dataProvider=new CActiveDataProvider('Profile');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+        $profile = $this->loadModel();
+        if(!Yii::app()->user->checkAccess('createUser', array('profile'=>$profile)))
+        {
+            $this->forward('view');
+        }
+        else
+        {
+            $dataProvider=new CActiveDataProvider('Profile');
+            $this->render('index',array(
+                'dataProvider'=>$dataProvider,
+            ));
+        }
+
 	}
 
 
@@ -196,12 +223,12 @@ class ProfileController extends Controller
     {
         $form = new ProfileUserForm;
         $profile = $this->loadModel();
-        /*
-        if(!Yii::app()->user->checkAccess('createUser', array('project'=>$project)))
+
+        if(!Yii::app()->user->checkAccess('createUser', array('profile'=>$profile)))
         {
             throw new CHttpException(403, 'You are not authorized to view this page');
         }
-        */
+
         //collect user data
         if(isset($_POST['ProfileUserForm']))
         {

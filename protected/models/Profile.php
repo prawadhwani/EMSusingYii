@@ -54,6 +54,7 @@ class Profile extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'id' => array(self::HAS_ONE, 'User', 'id'),
+            'leaves' => array(self::HAS_MANY, 'Leave', 'user_id','condition'=>'leaves.status='.Leave::STATUS_APPROVED),
 		);
 	}
 
@@ -136,7 +137,7 @@ class Profile extends CActiveRecord
         $command->bindValue(":profileId", $this->id, PDO::PARAM_INT);
         $command->bindValue(":userId", $userId, PDO::PARAM_INT);
         $command->bindValue(":role", $role, PDO::PARAM_STR);
-        return $command->execute;
+        return $command->execute();
     }
 
     public function removeUserFromRole($role, $userId)
@@ -181,6 +182,16 @@ class Profile extends CActiveRecord
         $command->bindValue(":profileId", $this->id, PDO::PARAM_INT);
         $command->bindValue(":userId", $user->id, PDO::PARAM_INT);
         return $command->execute()==1 ? true : false;
+    }
+
+    public function addLeave($leave)
+    {
+        if(Yii::app()->params['leaveNeedApproval'])
+            $leave->status=Leave::STATUS_PENDING;
+        else
+            $leave->status=Leave::STATUS_APPROVED;
+        $leave->user_id=$this->id;
+        return $leave->save();
     }
 
 

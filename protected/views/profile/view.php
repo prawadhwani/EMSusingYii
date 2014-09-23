@@ -13,8 +13,15 @@ $this->menu=array(
 	array('label'=>'Update Profile', 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>'Delete Profile', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Profile', 'url'=>array('admin')),
-    array('label'=>'Add Manager To Profile', 'url'=>array('adduser', 'id'=>$model->id)),
+    //array('label'=>'Add Manager To Profile', 'url'=>array('adduser', 'id'=>$model->id)),
+    array('label' => 'Request Leave', 'url'=>array('leave/create', 'pid'=>$model->id)),
 );
+
+if(Yii::app()->user->checkAccess('manager',array('profile'=>$model)))
+{
+    $this->menu[] = array('label'=>'Add Manager To Profile','url'=>array('adduser', 'id'=>$model->id));
+}
+
 ?>
 
 <h1>View Profile #<?php echo $model->id; ?></h1>
@@ -34,3 +41,21 @@ $this->menu=array(
         ),
 	),
 )); ?>
+
+<br>
+<h3>Leave Requests</h3>
+<?php if(Yii::app()->user->hasFlash('leaveSubmitted')): ?>
+    <div class="flash-success">
+        <?php echo Yii::app()->user->getFlash('leaveSubmitted'); ?>
+    </div>
+<?php else: ?>
+    <?php $this->renderPartial('/leave/_form',array(
+        'model'=>$leave,
+    )); ?>
+<?php endif; ?>
+
+<h3>Approved Leaves</h3>
+    <?php $this->renderPartial('_leaves',array(
+        'profile'=>$model,
+        'leaves'=>$model->leaves,
+    )); ?>
