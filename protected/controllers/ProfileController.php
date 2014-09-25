@@ -59,6 +59,15 @@ class ProfileController extends Controller
     protected function newLeave($profile)
     {
         $leave=new Leave;
+        //assign the user id and status to the leave
+        $leave->id = $this->id;
+        $leave->status = 1;
+
+        if(isset($_POST['ajax']) && $_POST['ajax']==='leave-form')
+        {
+            echo CActiveForm::validate($leave);
+            Yii::app()->end();
+        }
         if(isset($_POST['Leave']))
         {
             $leave->attributes=$_POST['Leave'];
@@ -161,6 +170,11 @@ class ProfileController extends Controller
 	public function actionIndex()
 	{
         $profile = $this->loadModel();
+        $model=Profile::model()->findByPk(Yii::app()->user->id);
+        if($model===null)
+        {
+            $this->forward('create');
+        }
         if(!Yii::app()->user->checkAccess('createUser', array('profile'=>$profile)))
         {
             $this->forward('view');
@@ -202,7 +216,8 @@ class ProfileController extends Controller
 	{
 		$model=Profile::model()->findByPk(Yii::app()->user->id);
 		if($model===null)
-			throw new CHttpException(404,'The requested page does not exist.');
+            $this->forward('create');
+			//throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
 	}
 

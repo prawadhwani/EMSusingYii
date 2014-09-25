@@ -1783,3 +1783,1201 @@ Stack trace:
 REQUEST_URI=/EMS/index.php
 HTTP_REFERER=http://localhost/EMS/index.php?r=leave/view&id=3
 ---
+2014/09/25 11:58:59 [error] [exception.CException] exception 'CException' with message 'Property "Leave.url" is not defined.' in /usr/share/nginx/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('url')
+#1 /usr/share/nginx/html/EMS/protected/views/leave/_view.php(26): CActiveRecord->__get('url')
+#2 /usr/share/nginx/html/yii/framework/web/CBaseController.php(130): require('/usr/share/ngin...')
+#3 /usr/share/nginx/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/usr/share/ngin...', Array, false)
+#4 /usr/share/nginx/html/yii/framework/zii/widgets/CListView.php(291): CBaseController->renderFile('/usr/share/ngin...', Array)
+#5 /usr/share/nginx/html/yii/framework/zii/widgets/CBaseListView.php(167): CListView->renderItems()
+#6 [internal function]: CBaseListView->renderSection(Array)
+#7 /usr/share/nginx/html/yii/framework/zii/widgets/CBaseListView.php(150): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{sort...')
+#8 /usr/share/nginx/html/yii/framework/zii/widgets/CBaseListView.php(135): CBaseListView->renderContent()
+#9 /usr/share/nginx/html/yii/framework/web/CBaseController.php(173): CBaseListView->run()
+#10 /usr/share/nginx/html/EMS/protected/views/leave/index.php(20): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 /usr/share/nginx/html/yii/framework/web/CBaseController.php(126): require('/usr/share/ngin...')
+#12 /usr/share/nginx/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/usr/share/ngin...', Array, true)
+#13 /usr/share/nginx/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/usr/share/ngin...', Array, true)
+#14 /usr/share/nginx/html/yii/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#15 /usr/share/nginx/html/EMS/protected/controllers/LeaveController.php(136): CController->render('index', Array)
+#16 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): LeaveController->actionIndex()
+#17 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#18 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#20 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#24 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('index')
+#26 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/index')
+#27 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#28 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/EMS/index.php?r=leave/index
+HTTP_REFERER=http://localhost/EMS/index.php?r=profile/index
+---
+2014/09/25 11:59:51 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('approve')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/approve')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=leave/approve&id=2
+HTTP_REFERER=http://localhost/EMS/index.php?r=leave/index
+---
+2014/09/25 12:00:13 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('approve')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/approve')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=leave/approve&id=2
+HTTP_REFERER=http://localhost/EMS/index.php?r=leave/index
+---
+2014/09/25 12:00:22 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('approve')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/approve')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=leave/approve&id=3
+HTTP_REFERER=http://localhost/EMS/index.php?r=leave/index
+---
+2014/09/25 12:15:33 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('approve')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/approve')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=leave/approve&id=2
+HTTP_REFERER=http://localhost/EMS/index.php?r=leave/index
+---
+2014/09/25 12:15:47 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('approve')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/approve')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=leave/approve&id=2
+HTTP_REFERER=http://localhost/EMS/index.php?r=leave/index
+---
+2014/09/25 12:16:44 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('approve')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/approve')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=leave/approve&id=2
+HTTP_REFERER=http://localhost/EMS/index.php?r=leave/index
+---
+2014/09/25 12:19:18 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('approve')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/approve')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=leave/approve&id=2
+HTTP_REFERER=http://localhost/EMS/index.php?r=leave/index
+---
+2014/09/25 12:22:17 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('approve')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/approve')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=leave/approve&id=2
+HTTP_REFERER=http://localhost/EMS/index.php?r=leave/index
+---
+2014/09/25 12:22:26 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('approve')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/approve')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=leave/approve
+---
+2014/09/25 12:22:33 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('approve')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/approve')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=leave/approve&id=2
+HTTP_REFERER=http://localhost/EMS/index.php?r=leave/index
+---
+2014/09/25 12:23:19 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('approve')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/approve')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=leave/approve&id=3
+HTTP_REFERER=http://localhost/EMS/index.php?r=leave/index
+---
+2014/09/25 12:31:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php:205
+Stack trace:
+#0 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(163): ProfileController->loadModel()
+#1 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('')
+#11 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#12 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/EMS/index.php
+HTTP_REFERER=http://localhost/EMS/index.php?r=site/register
+---
+2014/09/25 12:31:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php:205
+Stack trace:
+#0 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(163): ProfileController->loadModel()
+#1 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('')
+#11 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#12 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/EMS/index.php
+HTTP_REFERER=http://localhost/EMS/index.php?r=site/login
+---
+2014/09/25 12:32:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php:205
+Stack trace:
+#0 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(163): ProfileController->loadModel()
+#1 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('')
+#11 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#12 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/EMS/index.php
+HTTP_REFERER=http://localhost/EMS/index.php?r=site/register
+---
+2014/09/25 12:32:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php:205
+Stack trace:
+#0 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(163): ProfileController->loadModel()
+#1 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('')
+#11 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#12 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/EMS/index.php
+HTTP_REFERER=http://localhost/EMS/index.php
+---
+2014/09/25 12:32:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php:205
+Stack trace:
+#0 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(163): ProfileController->loadModel()
+#1 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('')
+#11 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('profile')
+#12 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/EMS/index.php?r=profile
+---
+2014/09/25 12:32:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php:205
+Stack trace:
+#0 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(163): ProfileController->loadModel()
+#1 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('')
+#11 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#12 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/EMS/index.php
+HTTP_REFERER=http://localhost/EMS/index.php?r=site/login
+---
+2014/09/25 12:33:41 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '25' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `profile` (`name`, `birthdate`, `website`, `bio`, `picture`, `id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5).
+in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php (94)
+in /usr/share/nginx/html/EMS/index.php (13)
+2014/09/25 12:33:41 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '25' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `profile` (`name`, `birthdate`, `website`, `bio`, `picture`, `id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5)' in /usr/share/nginx/html/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/db/ar/CActiveRecord.php(1077): CDbCommand->execute()
+#1 /usr/share/nginx/html/yii/framework/db/ar/CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(94): CActiveRecord->save()
+#3 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionCreate()
+#4 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('profile/create')
+#14 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/EMS/index.php?r=profile/create
+HTTP_REFERER=http://localhost/EMS/index.php?r=profile/create
+---
+2014/09/25 12:37:42 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('approve')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/approve')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=leave/approve&id=2
+HTTP_REFERER=http://localhost/EMS/index.php?r=leave/index
+---
+2014/09/25 12:37:48 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('approve')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/approve')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=leave/approve&id=2
+HTTP_REFERER=http://localhost/EMS/index.php?r=leave/index
+---
+2014/09/25 12:37:56 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('approve')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/approve')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=leave/approve&id=2
+HTTP_REFERER=http://localhost/EMS/index.php?r=leave/index
+---
+2014/09/25 12:43:38 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/delete')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=leave/delete&id=6
+HTTP_REFERER=http://localhost/EMS/index.php?r=leave/index
+---
+2014/09/25 12:44:35 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/delete')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=leave/delete&id=2
+HTTP_REFERER=http://localhost/EMS/index.php?r=leave
+---
+2014/09/25 12:44:51 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/admin')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=leave/admin
+---
+2014/09/25 12:45:04 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/delete')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=leave/delete&id=6
+HTTP_REFERER=http://localhost/EMS/index.php?r=leave/index
+---
+2014/09/25 12:46:12 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/delete')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=leave/delete&id=6
+HTTP_REFERER=http://localhost/EMS/index.php?r=leave/index
+---
+2014/09/25 12:46:13 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/delete')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=leave/delete&id=6
+HTTP_REFERER=http://localhost/EMS/index.php?r=leave/index
+---
+2014/09/25 12:46:13 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/delete')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=leave/delete&id=6
+HTTP_REFERER=http://localhost/EMS/index.php?r=leave/index
+---
+2014/09/25 12:46:13 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/delete')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=leave/delete&id=6
+HTTP_REFERER=http://localhost/EMS/index.php?r=leave/index
+---
+2014/09/25 12:48:01 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/delete')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=leave/delete&id=6
+HTTP_REFERER=http://localhost/EMS/index.php?r=leave/index
+---
+2014/09/25 12:48:02 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/delete')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=leave/delete&id=6
+HTTP_REFERER=http://localhost/EMS/index.php?r=leave/index
+---
+2014/09/25 12:48:02 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/delete')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=leave/delete&id=6
+HTTP_REFERER=http://localhost/EMS/index.php?r=leave/index
+---
+2014/09/25 12:48:02 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/delete')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=leave/delete&id=6
+HTTP_REFERER=http://localhost/EMS/index.php?r=leave/index
+---
+2014/09/25 12:48:02 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/delete')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=leave/delete&id=6
+HTTP_REFERER=http://localhost/EMS/index.php?r=leave/index
+---
+2014/09/25 12:48:03 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/delete')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=leave/delete&id=6
+HTTP_REFERER=http://localhost/EMS/index.php?r=leave/index
+---
+2014/09/25 12:48:19 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/delete')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=leave/delete&id=6
+HTTP_REFERER=http://localhost/EMS/index.php?r=leave/index
+---
+2014/09/25 12:48:22 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('approve')
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/approve')
+#9 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/EMS/index.php?r=leave/approve&id=2
+HTTP_REFERER=http://localhost/EMS/index.php?r=leave/index
+---
+2014/09/25 12:51:08 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /usr/share/nginx/html/yii/framework/web/CController.php:1118
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#9 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/delete')
+#10 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/EMS/index.php?r=leave/delete&id=6
+HTTP_REFERER=http://localhost/EMS/index.php?r=leave/index
+---
+2014/09/25 12:52:51 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /usr/share/nginx/html/yii/framework/web/CController.php:1118
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#9 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('leave/delete')
+#10 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/EMS/index.php?r=leave/delete&id=6
+HTTP_REFERER=http://localhost/EMS/index.php?r=leave/index
+---
+2014/09/25 12:57:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php:210
+Stack trace:
+#0 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(168): ProfileController->loadModel()
+#1 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('')
+#11 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#12 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/EMS/index.php
+HTTP_REFERER=http://localhost/EMS/index.php?r=site/login
+---
+2014/09/25 13:47:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php:215
+Stack trace:
+#0 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(168): ProfileController->loadModel()
+#1 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('')
+#11 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#12 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/EMS/index.php
+HTTP_REFERER=http://localhost/EMS/index.php?r=site/login
+---
+2014/09/25 13:47:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php:215
+Stack trace:
+#0 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(168): ProfileController->loadModel()
+#1 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('')
+#11 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#12 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/EMS/index.php
+HTTP_REFERER=http://localhost/EMS/index.php?r=site/login
+---
+2014/09/25 13:47:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php:215
+Stack trace:
+#0 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(168): ProfileController->loadModel()
+#1 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('')
+#11 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#12 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/EMS/index.php
+HTTP_REFERER=http://localhost/EMS/index.php?r=site/login
+---
+2014/09/25 13:48:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php:215
+Stack trace:
+#0 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(168): ProfileController->loadModel()
+#1 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('')
+#11 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#12 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/EMS/index.php
+HTTP_REFERER=http://localhost/EMS/index.php?r=site/login
+---
+2014/09/25 13:52:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php:215
+Stack trace:
+#0 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(168): ProfileController->loadModel()
+#1 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('')
+#11 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#12 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/EMS/index.php
+HTTP_REFERER=http://localhost/EMS/index.php?r=site/login
+---
+2014/09/25 13:52:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php:215
+Stack trace:
+#0 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(168): ProfileController->loadModel()
+#1 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('')
+#11 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#12 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/EMS/index.php
+HTTP_REFERER=http://localhost/EMS/index.php?r=site/login
+---
+2014/09/25 13:52:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php:215
+Stack trace:
+#0 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(168): ProfileController->loadModel()
+#1 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('')
+#11 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#12 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/EMS/index.php
+HTTP_REFERER=http://localhost/EMS/index.php?r=site/login
+---
+2014/09/25 13:52:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php:215
+Stack trace:
+#0 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(168): ProfileController->loadModel()
+#1 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('')
+#11 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#12 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/EMS/index.php
+HTTP_REFERER=http://localhost/EMS/index.php?r=site/login
+---
+2014/09/25 13:53:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php:215
+Stack trace:
+#0 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(168): ProfileController->loadModel()
+#1 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('')
+#11 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#12 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/EMS/index.php
+HTTP_REFERER=http://localhost/EMS/index.php?r=site/login
+---
+2014/09/25 13:53:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php:215
+Stack trace:
+#0 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(168): ProfileController->loadModel()
+#1 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('')
+#11 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#12 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/EMS/index.php
+HTTP_REFERER=http://localhost/EMS/index.php?r=site/login
+---
+2014/09/25 13:53:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php:215
+Stack trace:
+#0 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(168): ProfileController->loadModel()
+#1 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('')
+#11 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#12 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/EMS/index.php
+HTTP_REFERER=http://localhost/EMS/index.php?r=site/login
+---
+2014/09/25 15:08:00 [error] [php] Use of undefined constant STATUS_PENDING - assumed 'STATUS_PENDING' (/usr/share/nginx/html/EMS/protected/controllers/ProfileController.php:64)
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): ProfileController->runAction()
+#2 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): ProfileController->filterAccessControl()
+#5 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /usr/share/nginx/html/yii/framework/web/CController.php(265): ProfileController->runActionWithFilters()
+#8 /usr/share/nginx/html/yii/framework/web/CController.php(747): ProfileController->run()
+#9 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(180): ProfileController->forward()
+#10 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#11 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): ProfileController->runAction()
+#13 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#15 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): ProfileController->filterAccessControl()
+#16 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#17 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#18 /usr/share/nginx/html/yii/framework/web/CController.php(265): ProfileController->runActionWithFilters()
+#19 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): ProfileController->run()
+#20 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#21 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /usr/share/nginx/html/EMS/index.php(13): CWebApplication->run()
+REQUEST_URI=/EMS/index.php
+in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php (64)
+in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php (50)
+in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php (180)
+2014/09/25 15:08:24 [error] [exception.CException] exception 'CException' with message 'Property "ProfileController.STATUS_PENDING" is not defined.' in /usr/share/nginx/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(64): CComponent->__get('STATUS_PENDING')
+#1 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(50): ProfileController->newLeave(Object(Profile))
+#2 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionView()
+#3 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /usr/share/nginx/html/yii/framework/web/CController.php(747): CController->run('view')
+#12 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(180): CController->forward('view')
+#13 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#14 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#21 /usr/share/nginx/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): CController->run('')
+#23 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#24 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#25 /usr/share/nginx/html/EMS/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/EMS/index.php
+HTTP_REFERER=http://localhost/EMS/index.php?r=site/login
+---
+2014/09/25 15:08:32 [error] [php] Undefined variable: data (/usr/share/nginx/html/EMS/protected/controllers/ProfileController.php:64)
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): ProfileController->runAction()
+#2 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): ProfileController->filterAccessControl()
+#5 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /usr/share/nginx/html/yii/framework/web/CController.php(265): ProfileController->runActionWithFilters()
+#8 /usr/share/nginx/html/yii/framework/web/CController.php(747): ProfileController->run()
+#9 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(180): ProfileController->forward()
+#10 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#11 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): ProfileController->runAction()
+#13 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#15 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): ProfileController->filterAccessControl()
+#16 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#17 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#18 /usr/share/nginx/html/yii/framework/web/CController.php(265): ProfileController->runActionWithFilters()
+#19 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): ProfileController->run()
+#20 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#21 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /usr/share/nginx/html/EMS/index.php(13): CWebApplication->run()
+REQUEST_URI=/EMS/index.php
+in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php (64)
+in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php (50)
+in /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php (180)
+2014/09/25 15:18:38 [error] [php] Undefined variable: profile (/usr/share/nginx/html/EMS/protected/components/views/userMenu.php:1)
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/widgets/CWidget.php(244): UserMenu->renderFile()
+#1 /usr/share/nginx/html/EMS/protected/components/UserMenu.php(15): UserMenu->render()
+#2 /usr/share/nginx/html/yii/framework/zii/widgets/CPortlet.php(97): UserMenu->renderContent()
+#3 /usr/share/nginx/html/yii/framework/web/CBaseController.php(173): UserMenu->run()
+#4 /usr/share/nginx/html/EMS/protected/views/layouts/column2.php(12): ProfileController->widget()
+#5 /usr/share/nginx/html/yii/framework/web/CBaseController.php(126): require()
+#6 /usr/share/nginx/html/yii/framework/web/CBaseController.php(95): ProfileController->renderInternal()
+#7 /usr/share/nginx/html/yii/framework/web/CController.php(784): ProfileController->renderFile()
+#8 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(55): ProfileController->render()
+#9 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionView()
+#10 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): ProfileController->runAction()
+#12 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#14 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): ProfileController->filterAccessControl()
+#15 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#16 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#17 /usr/share/nginx/html/yii/framework/web/CController.php(265): ProfileController->runActionWithFilters()
+#18 /usr/share/nginx/html/yii/framework/web/CController.php(747): ProfileController->run()
+#19 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(180): ProfileController->forward()
+#20 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#21 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#22 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): ProfileController->runAction()
+#23 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#24 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#25 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): ProfileController->filterAccessControl()
+#26 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#27 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#28 /usr/share/nginx/html/yii/framework/web/CController.php(265): ProfileController->runActionWithFilters()
+#29 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): ProfileController->run()
+#30 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#31 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#32 /usr/share/nginx/html/EMS/index.php(13): CWebApplication->run()
+REQUEST_URI=/EMS/index.php
+in /usr/share/nginx/html/EMS/protected/components/views/userMenu.php (1)
+in /usr/share/nginx/html/EMS/protected/components/UserMenu.php (15)
+in /usr/share/nginx/html/EMS/protected/views/layouts/column2.php (12)
+2014/09/25 15:22:02 [error] [php] Undefined variable: profile (/usr/share/nginx/html/EMS/protected/components/views/userMenu.php:1)
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/widgets/CWidget.php(244): UserMenu->renderFile()
+#1 /usr/share/nginx/html/EMS/protected/components/UserMenu.php(15): UserMenu->render()
+#2 /usr/share/nginx/html/yii/framework/zii/widgets/CPortlet.php(97): UserMenu->renderContent()
+#3 /usr/share/nginx/html/yii/framework/web/CBaseController.php(173): UserMenu->run()
+#4 /usr/share/nginx/html/EMS/protected/views/layouts/column2.php(12): ProfileController->widget()
+#5 /usr/share/nginx/html/yii/framework/web/CBaseController.php(126): require()
+#6 /usr/share/nginx/html/yii/framework/web/CBaseController.php(95): ProfileController->renderInternal()
+#7 /usr/share/nginx/html/yii/framework/web/CController.php(784): ProfileController->renderFile()
+#8 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(55): ProfileController->render()
+#9 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionView()
+#10 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): ProfileController->runAction()
+#12 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#14 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): ProfileController->filterAccessControl()
+#15 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#16 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#17 /usr/share/nginx/html/yii/framework/web/CController.php(265): ProfileController->runActionWithFilters()
+#18 /usr/share/nginx/html/yii/framework/web/CController.php(747): ProfileController->run()
+#19 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(180): ProfileController->forward()
+#20 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#21 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#22 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): ProfileController->runAction()
+#23 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#24 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#25 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): ProfileController->filterAccessControl()
+#26 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#27 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#28 /usr/share/nginx/html/yii/framework/web/CController.php(265): ProfileController->runActionWithFilters()
+#29 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): ProfileController->run()
+#30 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#31 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#32 /usr/share/nginx/html/EMS/index.php(13): CWebApplication->run()
+REQUEST_URI=/EMS/index.php
+in /usr/share/nginx/html/EMS/protected/components/views/userMenu.php (1)
+in /usr/share/nginx/html/EMS/protected/components/UserMenu.php (15)
+in /usr/share/nginx/html/EMS/protected/views/layouts/column2.php (12)
+2014/09/25 17:27:06 [error] [php] Undefined variable: model (/usr/share/nginx/html/EMS/protected/components/views/userMenu.php:1)
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/widgets/CWidget.php(244): UserMenu->renderFile()
+#1 /usr/share/nginx/html/EMS/protected/components/UserMenu.php(15): UserMenu->render()
+#2 /usr/share/nginx/html/yii/framework/zii/widgets/CPortlet.php(97): UserMenu->renderContent()
+#3 /usr/share/nginx/html/yii/framework/web/CBaseController.php(173): UserMenu->run()
+#4 /usr/share/nginx/html/EMS/protected/views/layouts/column2.php(12): ProfileController->widget()
+#5 /usr/share/nginx/html/yii/framework/web/CBaseController.php(126): require()
+#6 /usr/share/nginx/html/yii/framework/web/CBaseController.php(95): ProfileController->renderInternal()
+#7 /usr/share/nginx/html/yii/framework/web/CController.php(784): ProfileController->renderFile()
+#8 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(55): ProfileController->render()
+#9 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionView()
+#10 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): ProfileController->runAction()
+#12 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#14 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): ProfileController->filterAccessControl()
+#15 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#16 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#17 /usr/share/nginx/html/yii/framework/web/CController.php(265): ProfileController->runActionWithFilters()
+#18 /usr/share/nginx/html/yii/framework/web/CController.php(747): ProfileController->run()
+#19 /usr/share/nginx/html/EMS/protected/controllers/ProfileController.php(180): ProfileController->forward()
+#20 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#21 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#22 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): ProfileController->runAction()
+#23 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#24 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#25 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): ProfileController->filterAccessControl()
+#26 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#27 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#28 /usr/share/nginx/html/yii/framework/web/CController.php(265): ProfileController->runActionWithFilters()
+#29 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): ProfileController->run()
+#30 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#31 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#32 /usr/share/nginx/html/EMS/index.php(13): CWebApplication->run()
+REQUEST_URI=/EMS/index.php
+in /usr/share/nginx/html/EMS/protected/components/views/userMenu.php (1)
+in /usr/share/nginx/html/EMS/protected/components/UserMenu.php (15)
+in /usr/share/nginx/html/EMS/protected/views/layouts/column2.php (12)
+2014/09/25 17:29:48 [error] [php] Undefined variable: model (/usr/share/nginx/html/EMS/protected/components/views/userMenu.php:1)
+Stack trace:
+#0 /usr/share/nginx/html/yii/framework/web/widgets/CWidget.php(244): UserMenu->renderFile()
+#1 /usr/share/nginx/html/EMS/protected/components/UserMenu.php(15): UserMenu->render()
+#2 /usr/share/nginx/html/yii/framework/zii/widgets/CPortlet.php(97): UserMenu->renderContent()
+#3 /usr/share/nginx/html/yii/framework/web/CBaseController.php(173): UserMenu->run()
+#4 /usr/share/nginx/html/EMS/protected/views/layouts/column2.php(12): LeaveController->widget()
+#5 /usr/share/nginx/html/yii/framework/web/CBaseController.php(126): require()
+#6 /usr/share/nginx/html/yii/framework/web/CBaseController.php(95): LeaveController->renderInternal()
+#7 /usr/share/nginx/html/yii/framework/web/CController.php(784): LeaveController->renderFile()
+#8 /usr/share/nginx/html/EMS/protected/controllers/LeaveController.php(136): LeaveController->render()
+#9 /usr/share/nginx/html/yii/framework/web/actions/CInlineAction.php(49): LeaveController->actionIndex()
+#10 /usr/share/nginx/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(133): LeaveController->runAction()
+#12 /usr/share/nginx/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /usr/share/nginx/html/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#14 /usr/share/nginx/html/yii/framework/web/filters/CInlineFilter.php(58): LeaveController->filterAccessControl()
+#15 /usr/share/nginx/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#16 /usr/share/nginx/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#17 /usr/share/nginx/html/yii/framework/web/CController.php(265): LeaveController->runActionWithFilters()
+#18 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(282): LeaveController->run()
+#19 /usr/share/nginx/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#20 /usr/share/nginx/html/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#21 /usr/share/nginx/html/EMS/index.php(13): CWebApplication->run()
+REQUEST_URI=/EMS/index.php?r=leave/index
+in /usr/share/nginx/html/EMS/protected/components/views/userMenu.php (1)
+in /usr/share/nginx/html/EMS/protected/components/UserMenu.php (15)
+in /usr/share/nginx/html/EMS/protected/views/layouts/column2.php (12)

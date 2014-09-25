@@ -42,8 +42,9 @@ if(Yii::app()->user->checkAccess('manager',array('profile'=>$model)))
 	),
 )); ?>
 
-<br>
-<h3>Leave Requests</h3>
+<br><br>
+<h3>Request Leave</h3>
+<h6>Enter the dates with a valid reason!</h6>
 <?php if(Yii::app()->user->hasFlash('leaveSubmitted')): ?>
     <div class="flash-success">
         <?php echo Yii::app()->user->getFlash('leaveSubmitted'); ?>
