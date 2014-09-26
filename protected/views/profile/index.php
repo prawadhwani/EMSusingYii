@@ -18,3 +18,8 @@ $this->menu=array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
 )); ?>
+
+<ul>
+    <li><?php echo CHtml::link('Approve Leaves',array('leave/index')) . ' (' . Leave::model()->pendingLeaveCount . ')'; ?></li>
+</ul>
+

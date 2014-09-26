@@ -8,18 +8,29 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Profile', 'url'=>array('index')),
-	array('label'=>'Create Profile', 'url'=>array('create')),
+	//array('label'=>'List Profile', 'url'=>array('index')),
+	//array('label'=>'Create Profile', 'url'=>array('create')),
 	array('label'=>'Update Profile', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Profile', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Profile', 'url'=>array('admin')),
+	//array('label'=>'Delete Profile', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	//array('label'=>'Manage Profile', 'url'=>array('admin')),
     //array('label'=>'Add Manager To Profile', 'url'=>array('adduser', 'id'=>$model->id)),
-    array('label' => 'Request Leave', 'url'=>array('leave/create', 'pid'=>$model->id)),
+    //array('label' => 'Request Leave', 'url'=>array('leave/create', 'pid'=>$model->id)),
 );
 
 if(Yii::app()->user->checkAccess('manager',array('profile'=>$model)))
 {
-    $this->menu[] = array('label'=>'Add Manager To Profile','url'=>array('adduser', 'id'=>$model->id));
+    //$this->menu[] = array('label'=>'Add Manager To Profile','url'=>array('adduser', 'id'=>$model->id));
+    $this->menu=array(
+        array('label'=>'List Profile', 'url'=>array('index')),
+        array('label'=>'Create Profile', 'url'=>array('create')),
+        array('label'=>'Update Profile', 'url'=>array('update', 'id'=>$model->id)),
+        array('label'=>'Delete Profile', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+        array('label'=>'Manage Profile', 'url'=>array('admin')),
+        array('label'=>'Add Manager To Profile', 'url'=>array('adduser', 'id'=>$model->id)),
+        array('label' => 'Request Leave', 'url'=>array('leave/create', 'pid'=>$model->id)),
+        //array('label')=>'Approve Leaves', 'url'=>array('leave/index', 'pid'=>$model->id),
+    );
+
 }
 
 ?>
@@ -55,8 +66,9 @@ if(Yii::app()->user->checkAccess('manager',array('profile'=>$model)))
     )); ?>
 <?php endif; ?>
 
-<h3>Approved Leaves</h3>
+<h3>Leaves</h3>
     <?php $this->renderPartial('_leaves',array(
         'profile'=>$model,
         'leaves'=>$model->leaves,
+
     )); ?>

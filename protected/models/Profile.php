@@ -54,7 +54,7 @@ class Profile extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'id' => array(self::HAS_ONE, 'User', 'id'),
-            'leaves' => array(self::HAS_MANY, 'Leave', 'user_id','condition'=>'leaves.status='.Leave::STATUS_APPROVED),
+            'leaves' => array(self::HAS_MANY, 'Leave', 'user_id','condition'=>'leaves.status='.Leave::STATUS_APPROVED or 'leave.status='.Leave::STATUS_DENY),
 		);
 	}
 
@@ -189,7 +189,11 @@ class Profile extends CActiveRecord
         if(Yii::app()->params['leaveNeedApproval'])
             $leave->status=Leave::STATUS_PENDING;
         else
+        {
             $leave->status=Leave::STATUS_APPROVED;
+            $leave->status=Leave::STATUS_DENY;
+        }
+
         $leave->user_id=$this->id;
         return $leave->save();
     }
